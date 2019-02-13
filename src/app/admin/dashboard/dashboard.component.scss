@@ -1,0 +1,40 @@
+#testimonials {
+
+    tr:hover {
+        background: #fffbca;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    input {
+        width: 162px;
+    }
+
+    input[type=file] {
+        width: 106px;
+    }
+
+    input[type=checkbox] {
+        width: auto;
+        transform: scale(1.1, 1.1);
+    }
+
+    textarea {
+        width: 240px;
+    }
+
+    button {
+        width: 70px;
+        background: #ff7068;
+    }
+
+    .new-row button {
+        background: #d5ff93;
+    }
+}
+
+.new-row {
+    background: #ccffbc;
+}

@@ -1,0 +1,63 @@
+<div class="container">
+
+    <h1>Testimonials</h1>
+    <table id="testimonials">
+
+        <tr *ngFor="let testimonial of testimonials">
+            <td>
+                <img *ngIf="testimonial.img" [src]="testimonial.img" width="63" height="32" alt="">
+                <span *ngIf="!testimonial.img">No image</span>
+                <input type="file" (change)="putImage(testimonial, $event, true)" placeholder="Upload file">
+            </td>
+            <td>
+                <label>Title <input type="text" [(ngModel)]="testimonial.title" (change)="put(testimonial)"></label>
+            </td>
+            <td>
+                <textarea [(ngModel)]="testimonial.content" (change)="put(testimonial)" rows="2"></textarea>
+            </td>
+            <td>
+                <label>Author <input type="text" [(ngModel)]="testimonial.author" (change)="put(testimonial)"></label>
+            </td>
+            <td>
+                <label>Position <input type="text" [(ngModel)]="testimonial.author_position" (change)="put(testimonial)"></label>
+            </td>
+            <td>
+                Home <input type="checkbox" [(ngModel)]="testimonial.home" (change)="patch(testimonial)">
+            </td>
+            <td>
+                Showcases <input type="checkbox" [(ngModel)]="testimonial.showcase" (change)="patch(testimonial)">
+            </td>
+            <td>
+                <button (click)="delete(testimonial)">Delete</button>
+            </td>
+        </tr>
+
+        <tr class="new-row">
+            <td>
+                <input type="file" (change)="putImage(newTestimonial, $event)" placeholder="Upload file">
+            </td>
+            <td>
+                <label>Title <input type="text" [(ngModel)]="newTestimonial.title"></label>
+            </td>
+            <td>
+                <textarea [(ngModel)]="newTestimonial.content" rows="3"></textarea>
+            </td>
+            <td>
+                <label>Author <input type="text" [(ngModel)]="newTestimonial.author"></label>
+            </td>
+            <td>
+                <label>Position <input type="text" [(ngModel)]="newTestimonial.author_position"></label>
+            </td>
+            <td>
+                Home <input type="checkbox" [(ngModel)]="newTestimonial.home">
+            </td>
+            <td>
+                Showcases <input type="checkbox" [(ngModel)]="newTestimonial.showcase">
+            </td>
+            <td>
+                <button (click)="post(newTestimonial)">Add</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
